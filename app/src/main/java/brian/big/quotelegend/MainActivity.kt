@@ -61,42 +61,30 @@ fun AppBottomBar() {
     }
 
     BottomAppBar(
-        elevation = 10.dp
+        elevation = 10.dp,
+        cutoutShape = RoundedCornerShape(50)
     ) {
-        BottomNavigationItem(
-            icon= {
-                Icon(Icons.Filled.Home,"Home")
-            },
-            selectedContentColor= Color.White,
-            unselectedContentColor= Color.White.copy(alpha = 0.4f),
-            onClick = {
-                selectedState = "home"
-            },
-            selected = selectedState.equals("home")
-        )
-        BottomNavigationItem(
-            icon= {
-                Icon(Icons.Filled.Favorite,"Favorites")
-            },
-            selectedContentColor= Color.White,
-            unselectedContentColor= Color.White.copy(alpha = 0.4f),
-            onClick = {
-                selectedState = "favorites"
-            },
-            selected = selectedState.equals("favorites")
-        )
+        Spacer(Modifier.weight(1f, true))
+        IconButton(onClick = {
+            selectedState = "home"
+        }) {
+            Icon(Icons.Filled.Home,"Home")
+        }
+        Spacer(modifier = Modifier.weight(1f, true))
 
-        BottomNavigationItem(
-            icon= {
-                Icon(Icons.Filled.VerifiedUser,"Profile")
-            },
-            selectedContentColor= Color.White,
-            unselectedContentColor= Color.White.copy(alpha = 0.4f),
-            onClick = {
-                selectedState = "profile"
-            },
-            selected = selectedState.equals("profile")
-        )
+        IconButton(onClick = {
+            selectedState = "favorites"
+        }) {
+            Icon(Icons.Filled.Favorite,"Favorites")
+        }
+        Spacer(Modifier.weight(1f, true))
+
+        IconButton(onClick = {
+            selectedState = "profile"
+        }) {
+            Icon(Icons.Filled.VerifiedUser,"Profile")
+        }
+        Spacer(Modifier.weight(1f, true))
     }
 }
 
