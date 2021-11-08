@@ -1,6 +1,9 @@
 # quoteLegend
 
-a compose app for quotes
+`jetpack compose` app for quotes
 
-## homescreen
+### homescreen
 <img width="100" height="200" alt="portfolio_view" src="screenshots/photo_2021-11-06_08-07-27.jpg">
+
+### Tasks
+- [ ] fetch data from a remote api
